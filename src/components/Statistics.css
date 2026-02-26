@@ -1,0 +1,134 @@
+.statistics {
+  background-color: var(--bg-primary);
+}
+
+.statistics-inner {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 700px) {
+  .statistics-inner {
+    grid-template-columns: 2fr auto 1fr;
+    gap: 2rem;
+  }
+}
+
+.stat-block {
+  text-align: center;
+  border: 1px solid var(--stat-border);
+  padding: 1.5rem;
+  border-radius: 0;
+}
+
+.stat-block--left {
+  padding-left: 10%;
+  padding-right: 5%;
+}
+
+.stat-block--left .stat-left-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  align-items: center;
+}
+
+.stat-left-number {
+  grid-row: 1;
+  grid-column: 1;
+  margin-bottom: 10rem;
+}
+
+.stat-left-desc {
+  grid-row: 1;
+  grid-column: 2;
+  margin-top: 5rem;
+}
+
+.stat-left-emphasis {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+.stat-block--left .stat-left-desc,
+.stat-block--left .stat-left-emphasis {
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .stat-block {
+    text-align: left;
+  }
+
+  /* 65% block (right): keep number and text centered */
+  .statistics-inner .stat-block:nth-child(3) {
+    text-align: center;
+  }
+}
+
+/* 70% and 65% numbers: JetBrains Mono, extra bold */
+.statistics .stat-value {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(5rem, 10vw, 7rem);
+  font-weight: 900;
+  color: var(--stat-color);
+  margin-bottom: 0.5rem;
+}
+
+/* 70% block: same sizes as 65% block, fixed color */
+.statistics-inner .stat-block:nth-child(1) .stat-value {
+  color: #C5B4E3;
+  font-size: clamp(7.5rem, 15vw, 10.5rem);
+}
+
+.statistics-inner .stat-block:nth-child(1) .stat-desc,
+.statistics-inner .stat-block:nth-child(1) .stat-emphasis {
+  font-size: 3rem;
+}
+
+.stat-desc {
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.stat-emphasis {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 65% block: 1.5× text size */
+.statistics-inner .stat-block:nth-child(3) .stat-value {
+  font-size: clamp(7.5rem, 15vw, 10.5rem);
+}
+
+.statistics-inner .stat-block:nth-child(3) .stat-desc,
+.statistics-inner .stat-block:nth-child(3) .stat-emphasis {
+  font-size: 3rem;
+  color: var(--stat-color);
+}
+
+.stat-divider {
+  width: 0;
+  min-height: 0;
+  background: transparent;
+  visibility: hidden;
+}
+
+@media (min-width: 700px) {
+  .stat-divider {
+    min-height: 0;
+  }
+}

@@ -1,0 +1,179 @@
+/* Load Open Sans and JetBrains Mono */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: default;
+}
+
+/* Theme: Light */
+[data-theme='light'] {
+  --bg-primary: #fffada;
+  --bg-secondary: #c5b4e3;
+  --bg-card: #c5b4e3;
+  --text-primary: #522a70;
+  --text-secondary: #222023;
+  --accent-yellow: #fbd050;
+  --accent-yellow-text: #522a70;
+  --accent-purple: #522a70;
+  --stat-color: #522a70;
+  --border-subtle: rgba(82, 42, 112, 0.12);
+  --quote-bg: #fbd050;
+  --quote-text: #522a70;
+  --nav-hover: #522a70;
+  /* Waitlist/primary CTA: light purple with black text in light mode */
+  --cta-primary: #c5b4e3;
+  --cta-primary-text: #000000;
+  /* Hero body text (subtitle, stat, closing): black in light mode */
+  --hero-body-text: #000000;
+  /* Logo: gray circle + text beside it */
+  --logo-bg: #b0b0b0;
+  --logo-border: #888;
+  /* CTA: no stroke/border in light mode */
+  --cta-border: none;
+  /* Hero phone mockup: dark purple casing in light mode */
+  --hero-phone-frame: #522a70;
+  --hero-phone-screen-bg: #c5b4e3;
+  /* Social media icon color: same in light and dark */
+  --social-media-icon-color: #FFFADA;
+  /* Social media circle background in light mode */
+  --social-media-icon-bg: #522A70;
+  /* Statistics outline (analytics boxes) */
+  --stat-border: #522A70;
+}
+
+/* Theme: Dark */
+[data-theme='dark'] {
+  --bg-primary: #222023;
+  --bg-secondary: #522A70;
+  --bg-card: #522A70;
+  --text-primary: #FFFADA;
+  --text-secondary: #C5B4E3;
+  --accent-yellow: #FA99C1;
+  --accent-yellow-text: #1a1a2e;
+  --accent-purple: #d5bcf6;
+  --stat-color: #e88bb5;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --quote-bg: #C5B4E3;
+  --quote-text: #000000;
+  --nav-hover: #d5bcf6;
+  /* Waitlist/primary CTA: yellow in dark mode */
+  --cta-primary: #F4CB6A;
+  --cta-primary-text: #222023;
+  --logo-bg: #4a4563;
+  --logo-border: rgba(255, 255, 255, 0.3);
+  --cta-border: none;
+  --hero-phone-frame: #4a4563;
+  --hero-phone-screen-bg: #3d3a52;
+  --hero-body-text: var(--text-primary);
+  /* Social media icon color: same in light and dark */
+  --social-media-icon-color: #FFFADA;
+  /* Social media circle background in dark mode */
+  --social-media-icon-bg: #C5B4E3;
+  /* Statistics outline (analytics boxes) */
+  --stat-border: #C5B4E3;
+}
+
+/* Base theme application */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Open Sans everywhere except hero (hero keeps its mix; .hero-subtitle stays JetBrains Mono) */
+header,
+header *,
+section:not(.hero),
+section:not(.hero) * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Section spacing – 90% usable width, 5% margin on each side */
+.section {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* CTA button (shared) – uses --cta-primary in light (purple), dark (yellow) */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--cta-primary);
+  color: var(--cta-primary-text);
+  border: var(--cta-border);
+  border-radius: 25px;
+  padding: 0.6rem 6rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cta-button-arrow {
+  font-size: 1.1em;
+}
+
+/* Footer CTA: yellow with dark text in light mode (per design) */
+[data-theme='light'] .cta-button--footer {
+  background-color: var(--accent-yellow);
+  color: var(--text-primary);
+  border: none;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+}

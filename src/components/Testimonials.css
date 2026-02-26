@@ -1,0 +1,66 @@
+.testimonials {
+  background-color: var(--bg-primary);
+  padding: 0;
+}
+
+.testimonials-inner {
+  text-align: center;
+  width: 100%;
+  max-width: none;
+  padding: 3rem 0 4rem;
+  margin: 0;
+}
+
+.testimonials-title {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem;
+  padding: 0 1rem;
+  color: var(--text-primary);
+}
+
+.testimonials-carousel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  padding: 0;
+}
+
+/* Override global Open Sans so quote text matches hero subtitle (JetBrains Mono) */
+.testimonials .testimonial-card,
+.testimonials .testimonial-card * {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.testimonial-card {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 1;
+  background-color: var(--quote-bg);
+  color: var(--quote-text);
+  border-radius: 0;
+  padding: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.testimonial-quote {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 700;
+  margin: 0 0 3rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+}

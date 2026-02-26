@@ -1,0 +1,55 @@
+.how-it-works {
+  background-color: var(--bg-primary);
+}
+
+.how-it-works-inner {
+  text-align: center;
+}
+
+.how-it-works-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 2rem;
+  color: var(--text-primary);
+}
+
+.how-it-works-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.how-it-works-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.how-it-works-item:last-child {
+  margin-bottom: 0;
+}
+
+.how-it-works-num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.how-it-works-step-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--text-primary);
+}
+
+.how-it-works-step-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}

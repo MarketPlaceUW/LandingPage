@@ -94,6 +94,15 @@
   font-size: 3rem;
 }
 
+/* 70% block text colors – light mode only */
+[data-theme='light'] .statistics-inner .stat-block:nth-child(1) .stat-desc {
+  color: #522a70;
+}
+
+[data-theme='light'] .statistics-inner .stat-block:nth-child(1) .stat-emphasis {
+  color: #222023;
+}
+
 .stat-desc {
   font-size: 2rem;
   color: var(--text-secondary);

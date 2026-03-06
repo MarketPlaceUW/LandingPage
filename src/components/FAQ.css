@@ -27,7 +27,7 @@
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--text-primary);
 }
 
 .faq-item:last-child {

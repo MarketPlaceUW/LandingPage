@@ -8,8 +8,9 @@ function FeatureCard({ title, description, icon }) {
   const iconAlt = icon === 'cart' ? 'Buy and sell' : 'In-app messages';
   return (
     <article className="feature-card">
-      <div className="feature-icon">
-        <img src={iconSrc} alt={iconAlt} className="feature-icon-img" />
+      <div className="feature-icon" style={{ '--icon-img': `url(${iconSrc})` }}>
+        <img src={iconSrc} alt={iconAlt} className="feature-icon-img feature-icon-img--dark" />
+        <span className="feature-icon-img feature-icon-img--light" role="img" aria-label={iconAlt} />
       </div>
       <h3 className="feature-title">{title}</h3>
       <p className="feature-desc">{description}</p>

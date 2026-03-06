@@ -5,7 +5,7 @@ import './Hero.css';
 
 export function Hero() {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <div className="hero-inner section">
         <div className="hero-phone">
           <img

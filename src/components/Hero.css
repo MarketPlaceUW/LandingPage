@@ -3,15 +3,17 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: visible;
 }
 
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  overflow: visible;
 }
 
 @media (min-width: 900px) {
@@ -26,6 +28,11 @@
     padding-right: 0;
   }
 
+  .hero-phone-img {
+    max-width: 400px;
+    width: 400px;
+  }
+
   .hero-phone {
     order: 0;
     justify-content: flex-start;
@@ -34,19 +41,27 @@
   .hero-content {
     order: 0;
   }
+
+  .hero-stat {
+    margin: 9rem 0 2.25rem;
+  }
 }
 
 .hero-phone {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
+  padding: 1rem 0;
+  min-height: 0;
 }
 
 .hero-phone-img {
-  width: 400px; /* slightly larger than 380px */
-  max-width: 100%;
+  width: 100%;
+  max-width: 280px;
   height: auto;
   transform: rotate(8deg);
+  object-fit: contain;
   /* Prevent drag, select, and context menu so it doesn’t feel like an image */
   -webkit-user-drag: none;
   user-drag: none;
@@ -55,24 +70,30 @@
   pointer-events: none;
 }
 
+@media (min-width: 400px) {
+  .hero-phone-img {
+    max-width: 320px;
+  }
+}
+
 .hero-content {
   max-width: 810px; /* 1.5× 540px */
   text-align: center;
 }
 
 .hero-title {
-  font-size: 3.75rem; /* 1.5× 2.5rem */
+  font-size: clamp(1.75rem, 8vw, 3.75rem);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin: 0 0 1.125rem;
+  margin: 0 0 0.75rem;
   color: var(--text-primary);
   line-height: 1.2;
 }
 
 .hero-subtitle {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 2.8125rem; /* 1.5× 1.875rem */
+  font-size: clamp(1.125rem, 4vw, 2.8125rem);
   font-weight: 400;
   color: var(--hero-body-text);
   margin: 0;
@@ -80,25 +101,40 @@
 }
 
 .hero-stat {
-  font-size: 1.875rem; /* 1.5× 1.25rem */
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
   font-weight: 600;
   color: var(--hero-body-text);
-  margin: 9rem 0 2.25rem;
+  margin: 2rem 0 1.5rem;
   line-height: 1.55;
 }
 
 .hero .cta-button {
   margin: 0;
   display: inline-flex;
-  font-size: 1.5rem;
+  justify-content: center;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 700;
-  padding: 0.9rem 9rem;
+  padding: 0.75rem 4rem;
+  min-width: min(280px, 90vw);
+}
+
+@media (min-width: 600px) {
+  .hero .cta-button {
+    padding: 0.9rem 4rem;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero .cta-button {
+    padding: 0.9rem 9rem;
+  }
 }
 
 .hero-closing {
-  font-size: 1.875rem; /* 1.5× 1.25rem */
+  font-size: clamp(1.125rem, 3vw, 1.875rem);
   font-weight: 700;
   color: var(--hero-body-text);
-  margin: 2.25rem 0 0;
+  margin: 1.5rem 0 0;
   line-height: 1.55;
 }

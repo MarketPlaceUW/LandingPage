@@ -7,25 +7,52 @@
   text-align: center;
   width: 100%;
   max-width: none;
-  padding: 3rem 0 4rem;
+  padding: 2rem 0 3rem;
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .testimonials-inner {
+    padding: 3rem 0 4rem;
+  }
+}
+
 .testimonials-title {
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 5vw, 4rem);
   font-weight: 400;
-  margin: 0 0 1.5rem;
-  padding: 0 1rem;
+  margin: 0 0 1rem;
+  padding: 0 0.5rem;
   color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .testimonials-title {
+    margin: 0 0 1.5rem;
+    padding: 0 1rem;
+  }
 }
 
 .testimonials-carousel {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  gap: 5rem;
+  gap: 1.5rem;
   width: 100%;
-  padding: 0;
+  padding: 0 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .testimonials-carousel {
+    gap: 3rem;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials-carousel {
+    gap: 5rem;
+  }
 }
 
 /* Override global Open Sans so quote text matches hero subtitle (JetBrains Mono) */
@@ -35,13 +62,14 @@
 }
 
 .testimonial-card {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 1 1 280px;
+  min-width: min(280px, 100%);
+  max-width: 100%;
   aspect-ratio: 1;
   background-color: var(--quote-bg);
   color: var(--quote-text);
   border-radius: 0;
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
   text-align: center;
   box-sizing: border-box;
   display: flex;
@@ -49,18 +77,38 @@
   justify-content: center;
   align-items: center;
   overflow: auto;
+  container-type: inline-size;
+  container-name: testimonial-card;
 }
 
 .testimonial-quote {
-  font-size: 1.8rem;
+  font-size: clamp(1.25rem, 5.5cqw, 1.8rem);
   font-style: italic;
   font-weight: 700;
-  margin: 0 0 3rem;
+  margin: 0 0 1.5rem;
   line-height: 1.6;
 }
 
+@media (min-width: 768px) {
+  .testimonial-quote {
+    margin: 0 0 3rem;
+  }
+}
+
+@container testimonial-card (min-width: 400px) {
+  .testimonial-quote {
+    font-size: clamp(1.35rem, 5cqw, 1.8rem);
+  }
+}
+
 .testimonial-author {
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 4.5cqw, 1.8rem);
   font-style: normal;
   font-weight: 400;
+}
+
+@container testimonial-card (min-width: 400px) {
+  .testimonial-author {
+    font-size: clamp(1.1rem, 4cqw, 1.8rem);
+  }
 }

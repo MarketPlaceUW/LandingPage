@@ -20,7 +20,7 @@ function FeatureCard({ title, description, icon }) {
 
 export function Features() {
   return (
-    <section id="products" className="features">
+    <section id="features" className="features">
       <div className="features-inner section">
         <h2 className="features-title">UW MARKETPLACE</h2>
         <div className="features-grid">

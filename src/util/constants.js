@@ -1,12 +1,13 @@
 export const SECTION_IDS = {
+  HERO: 'hero',
   HOW_IT_WORKS: 'how-it-works',
-  PRODUCTS: 'products',
+  FEATURES: 'features',
   FAQ: 'faq',
 };
 
 export const NAV_LINKS = [
   { label: 'How it works', id: SECTION_IDS.HOW_IT_WORKS },
-  { label: 'Products', id: SECTION_IDS.PRODUCTS },
+  { label: 'Features', id: SECTION_IDS.FEATURES },
   { label: 'FAQ', id: SECTION_IDS.FAQ },
 ];
 

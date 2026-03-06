@@ -15,6 +15,8 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 input,
@@ -31,6 +33,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 #root {
@@ -134,9 +137,10 @@ section:not(.hero) * {
 /* Section spacing – 90% usable width, 5% margin on each side */
 .section {
   width: 90%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 @media (min-width: 768px) {
@@ -154,9 +158,22 @@ section:not(.hero) * {
   color: var(--cta-primary-text);
   border: var(--cta-border);
   border-radius: 25px;
-  padding: 0.6rem 6rem;
+  padding: 0.6rem 2rem;
   font-size: 1rem;
   font-weight: 600;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .cta-button {
+    padding: 0.6rem 4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .cta-button {
+    padding: 0.6rem 6rem;
+  }
 }
 
 .cta-button-arrow {
